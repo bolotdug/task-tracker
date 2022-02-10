@@ -15,6 +15,6 @@ services:
     image: task-tracker
     depends_on:
       - task_tracker_db
-#    restart: on-failure
+    restart: on-failure
     ports:
       - "8080:8080"
