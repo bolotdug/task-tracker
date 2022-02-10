@@ -1,0 +1,17 @@
+spring:
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    url: ${DB_URL:jdbc:postgresql://task_tracker_db:5432/task_tracker_db}
+    username: ${DB_USER:task}
+    password: ${DB_PASSWORD:task}
+  jpa:
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
+server:
+  servlet:
+    context-path: /api
+springdoc:
+  api-docs:
+    path: /api-docs

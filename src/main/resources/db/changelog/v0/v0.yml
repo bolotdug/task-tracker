@@ -1,0 +1,5 @@
+databaseChangeLog:
+  - include:
+      file: classpath:db/changelog/v0/create-project-table.sql
+  - include:
+      file: classpath:db/changelog/v0/create-task-table.sql

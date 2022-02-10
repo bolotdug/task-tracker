@@ -1,0 +1,20 @@
+services:
+  task_tracker_db:
+    container_name: task_tracker_db
+    image: postgres:13-alpine3.14
+    environment:
+      POSTGRES_DB: task_tracker_db
+      POSTGRES_USER: task
+      POSTGRES_PASSWORD: task
+    volumes:
+      - ./../docker/volumes/task_tracker_db:/var/lib/postgresql/data
+    ports:
+      - "5438:5432"
+  server:
+    container_name: tasktracker_cont
+    image: task-tracker
+    depends_on:
+      - task_tracker_db
+#    restart: on-failure
+    ports:
+      - "8080:8080"
